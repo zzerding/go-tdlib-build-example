@@ -10,8 +10,9 @@ jobs:
 
     - name: apt update
       run:
-       apt-get update &&
-       apt-get install make git zlib1g-dev libssl-dev gperf php cmake g++
+       sudo apt-get update &&
+       sudo apt-get upgrade &&
+       sudo apt-get install make git zlib1g-dev libssl-dev gperf php cmake g++
 
     - name: git clone
       run: git clone https://github.com/tdlib/td.git
@@ -26,7 +27,7 @@ jobs:
         cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr/local ..
 
     - name: build install
-      run: cd td/build && cmake --build . --target install
+      run: cd td/build && sudo cmake --build . --target install
 
     - name: go build 
       run: cd src && sudo  go build -o ./dist/main
