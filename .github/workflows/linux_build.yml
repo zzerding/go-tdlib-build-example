@@ -12,13 +12,13 @@ jobs:
       run: sudo apt-get install make git zlib1g-dev libssl-dev gperf php cmake g++
 
     - name: install td/tdlib/
-      run:  cd tdlib/linux && sh ./install.sh
+      run:  cd tdlib/linux && sudo sh ./install.sh
 
     - name: show go version
       run: go version 
 
     - name: go build 
-      run: cd src && go build -o ./dist/test
+      run: cd src && sudo  go build -o ./dist/test
 
     - uses: actions/upload-artifact@v2
       with:
