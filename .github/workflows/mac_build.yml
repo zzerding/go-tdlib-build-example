@@ -12,7 +12,7 @@ jobs:
       run: brew update && brew install gperf cmake openssl
       
     - name: install td/tdlib/
-      run:  cd tdlib/linux && sh ./install.sh
+      run:  cd tdlib/mac && sh ./install.sh
 
     - name: show go version
       run: go version 
