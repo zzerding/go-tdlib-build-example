@@ -1,0 +1,23 @@
+name: linux build 
+on:
+  push:
+jobs:
+  windows:
+    runs-on: macos-10.15
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+      
+    - name: install td/tdlib/
+      run:  cd tdlib/mac && sh ./install.sh
+
+    - name: show go version
+      run: go version 
+
+    - name: go build 
+      run: cd src && go build -o ./dist/test
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: src/dist/test
