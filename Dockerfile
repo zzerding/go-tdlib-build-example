@@ -15,7 +15,7 @@ RUN apt-get update && \
     wget https://golang.org/dl/go1.15.2.linux-amd64.tar.gz &&\
     tar -C /usr/local -xzf go1.15.2.linux-amd64.tar.gz &&\
     cd / &&\
-    rm  -rf /tmp &&\
+    rm  -rf /tmp/* &&\
     apt-get purge -y --auto-remove ... &&\
     apt-get clean -y  &&\
 ENV PATH=/usr/local/go/bin:$PATH
