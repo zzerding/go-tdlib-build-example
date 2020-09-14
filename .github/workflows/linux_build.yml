@@ -1,6 +1,8 @@
 name: go linux build 
 on:
   push:
+    tags:
+      - ".*build"
 jobs:
  ubuntu:
     runs-on: ubuntu-18.04
