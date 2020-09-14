@@ -12,7 +12,7 @@ jobs:
       run:
        sudo apt-get update &&
        sudo apt-get upgrade &&
-       sudo apt-get install make git zlib1g-dev libssl-dev gperf php cmake g++
+       sudo apt-get install make zlib1g-dev libssl-dev gperf  cmake g++
 
     - name: git clone
       run: git clone https://github.com/tdlib/td.git
