@@ -18,7 +18,7 @@ RUN apt-get update && \
     rm  -rf /tmp &&\
     apt-get purge -y --auto-remove ... &&\
     apt-get clean -y  &&\
-    echo export PATH=$PATH:/usr/local/go/bin >>~/.bashrc
+ENV PATH=/usr/local/go/bin:$PATH
 WORKDIR /
 
 
