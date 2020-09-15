@@ -16,8 +16,8 @@ RUN apt-get update && \
     tar -C /usr/local -xzf go1.15.2.linux-amd64.tar.gz &&\
     cd / &&\
     rm  -rf /tmp/* &&\
-    apt-get purge -y --auto-remove ... &&\
-    apt-get clean -y  &&\
+    apt-get purge --auto-remove &&\
+    apt-get clean  
 ENV PATH=/usr/local/go/bin:$PATH
 WORKDIR /
 
