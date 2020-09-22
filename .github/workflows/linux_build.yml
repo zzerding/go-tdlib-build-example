@@ -32,9 +32,9 @@ jobs:
       run: cd td/build && sudo cmake --build . --target install
 
     - name: go build 
-      run: cd src && sudo  go build -o ./dist/main
+      run: sudo  go build -o ./dist/main
 
     - uses: actions/upload-artifact@v2
       with:
         name: go-build
-        path: src/dist/
+        path: /dist/
