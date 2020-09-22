@@ -19,6 +19,7 @@ RUN apt-get update && \
     apt-get purge --auto-remove &&\
     apt-get clean  
 ENV PATH=/usr/local/go/bin:$PATH
-WORKDIR /
+WORKDIR /app
+CMD [  "sh", "-c","go build" ]
 
 
